@@ -1,0 +1,169 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <!-- Title Text -->
+        <TextView
+            android:id="@+id/titleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/versablock"
+            android:text="@string/simon_says"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.1"
+            android:gravity="center"/>
+
+        <!-- Score Text -->
+        <TextView
+            android:id="@+id/scoreTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/versablock"
+            android:gravity="center"
+            android:text="@string/score_0"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintTop_toBottomOf="@id/titleView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Start Button -->
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#B6B2B2"
+            android:fontFamily="@font/versablock"
+            android:text="@string/start"
+            android:textColor="#3E2723"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/scoreTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Top Scores -->
+        <TextView
+            android:id="@+id/topScoresText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/versablock"
+            android:text="@string/top_5_scores"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@id/startButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Reset High Scores Button -->
+        <Button
+            android:id="@+id/resetHighScoresButton"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#B6B2B2"
+            android:fontFamily="@font/versablock"
+            android:text="@string/reset_high_scores"
+            android:textColor="#3E2723"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/topScoresText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Button Container -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/buttonContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/resetHighScoresButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.6">
+
+            <!-- Yellow Button -->
+            <ImageButton
+                android:id="@+id/yellowButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/yellow_button"
+                android:contentDescription="@string/yellow"
+                app:layout_constraintHeight_percent="0.25"
+                app:layout_constraintWidth_percent="0.25"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <!-- Red Button -->
+            <ImageButton
+                android:id="@+id/redButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/red_button"
+                android:contentDescription="@string/red"
+                app:layout_constraintHeight_percent="0.25"
+                app:layout_constraintWidth_percent="0.25"
+                app:layout_constraintStart_toEndOf="@id/yellowButton"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <!-- Blue Button -->
+            <ImageButton
+                android:id="@+id/blueButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/blue_button"
+                android:contentDescription="@string/blue"
+                app:layout_constraintHeight_percent="0.25"
+                app:layout_constraintWidth_percent="0.25"
+                app:layout_constraintStart_toEndOf="@id/redButton"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <!-- Green Button -->
+            <ImageButton
+                android:id="@+id/greenButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/green_button"
+                android:contentDescription="@string/green"
+                app:layout_constraintHeight_percent="0.25"
+                app:layout_constraintWidth_percent="0.25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/yellowButton"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Round Text -->
+        <TextView
+            android:id="@+id/roundTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/versablock"
+            android:text="@string/round_1"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/buttonContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
